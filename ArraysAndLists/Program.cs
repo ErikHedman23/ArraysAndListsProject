@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace ArraysAndLists
 {
@@ -9,11 +11,26 @@ namespace ArraysAndLists
             //TODO:
 
             // Create an int Array and populate numbers 1-10
+            int[] num = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            foreach(int number in num)
+            {
+                Console.WriteLine(number);
+            }
+            EvensandOdds();
+            
+
+        }
+        public static void EvensandOdds()
+        {
+
 
             /* Create two Lists of type int.
              * Name one List "evens"
              * Name the other List "odds"
              */
+            var evens = new List<int>();
+
+            List<int> odds = new List<int>();
 
             /* Using either a foreach or for loop,
              * nest an if statement to check to see
@@ -21,12 +38,44 @@ namespace ArraysAndLists
              * Then add those numbers to either the evens List
              * or the odds List
              */
+            for (int i = 0; i < 100; i+=2)
+            {
+                evens.Add(i);
+            }
+
+            for (int i = 1; i < 100; i+=2)
+            {
+                odds.Add(i);
+            }
+            
+            /*foreach (var number in evens)
+            {
+
+                if (number % 2 == 0)
+                {
+                    evens.Add(number);
+                }
+                else
+                {
+                    odds.Add(number);
+                }
+            }*/
 
             /* Now using foreach or for loops,
              * display each List of even and odd numbers
              *
              * Try to be creative in your display
              */
+            Console.WriteLine("Display all even numbers in evens List:");
+            for (int i = 0; i < evens.Count; i++)
+            {
+                Console.WriteLine(evens[i]);
+            }
+            Console.WriteLine("Display all odd numbers in odds List:");
+            for (int i = 0; i < odds.Count; i++)
+            {
+                Console.WriteLine(odds[i]);
+            }
         }
     }
 }
